@@ -1,0 +1,131 @@
+body {
+  /*background-image: linear-gradient(-90deg, lightblue, blue, lightblue);*/
+  background-image: url(../img/sterrenhemel.jpg);
+  background-position: center, center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: 2050px 1500px; /*(verhouding = 1,3)*/
+  color: black;
+  font-family: "Lato";
+  font-size: 16px;
+}
+
+.header {
+  text-align: center;
+}
+
+.logo img {
+  width: 300px;
+  margin: 40px 0px 50px 0px;
+}
+
+h1 {
+  font-family: "Avenir Next";
+  font-size: 20px;
+  margin-bottom: 0px;
+  margin-left: 8px;
+  margin-right: 8px;
+}
+
+p {
+	margin-top: 0px;
+	margin-bottom: 10px;
+	margin-left: 8px;
+  	margin-right: 8px;
+}
+
+
+
+.header, .visualisatie1, .visualisatie2, .visualisatie3 {
+  /*padding: 0.2em 1em;
+  padding-bottom: 0px;*/
+}
+
+.header {
+    background-color: none;
+    grid-area: title;
+}
+
+.visualisatie1 {
+    background-color: rgb(255, 255, 255);
+    grid-area: visualisatie1;
+    padding: 0px 10px 30px 10px;
+    margin: 5px 5px 5px 5px;
+}
+
+.visualisatie2 {
+    background-color: rgb(255, 255, 255);
+    grid-area: visualisatie2;
+    padding: 10px 10px 10px 10px;
+    margin: 5px 5px 5px 5px;
+}
+
+.visualisatie3 {
+    background-color: rgb(255, 255, 255);
+    grid-area: visualisatie3;
+    padding: 10px 10px 10px 10px;
+    margin: 5px 5px 5px 5px;
+}
+
+/*
+#myChart2 {
+	min-width: 200px;
+}
+*/
+
+
+@media only screen and (min-width: 0px) and (max-width: 499px){
+  body{
+    display: grid;
+    grid-template-columns: 100%;
+
+    grid-template-areas: 
+          "title"
+          "visualisatie1" 
+          "visualisatie2"
+          "visualisatie3"
+  }
+}
+
+@media only screen and (min-width: 500px) and (max-width: 799px){
+  body{
+    display: grid;
+    grid-template-columns: 50% 50%;
+
+    grid-template-areas: 
+          "title title"
+          "visualisatie1 visualisatie2" 
+          "visualisatie3 visualisatie3"
+  }
+}
+
+@media only screen and (min-width: 800px) and (max-width: 1199px){
+  body{
+    display: grid;
+    grid-template-columns: 33% 34% 33%;
+
+    grid-template-areas: 
+          "title title title"
+          "visualisatie1 visualisatie2 visualisatie3"
+  }
+}
+
+@media only screen and (min-width: 1200px){
+  body{
+    display: grid;
+    grid-template-columns: 14% 24% 24% 24% 14%;
+
+    grid-template-areas: 
+          ". title title title ."
+          ". visualisatie1 visualisatie2 visualisatie3 ."
+  }
+
+}
+
+
+
+
+
+
+
+
