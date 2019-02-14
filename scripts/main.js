@@ -1,8 +1,35 @@
+//De code hieronder heb ik gemaakt m.b.v. een tutorial op youtube.
+//Let op: ik heb de code niet klakkeloos overgenomen, maar ik heb het aangepast naar hoe ik het wilde.
+
+var countDownDate = new Date("Apr 3, 2019 00:00:00").getTime();
+var countDownfunction = setInterval(function() {
+    var now = new Date().getTime();
+    var distance = countDownDate - now;
+    var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+    var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+    var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+    var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+    document.getElementById("dagen").innerHTML = days + " dagen";
+    document.getElementById("uren").innerHTML = hours + " uren";
+    document.getElementById("minuten").innerHTML = minutes + " minuten";
+    document.getElementById("seconden").innerHTML = seconds + " seconden";
+    if(distance < 0) {
+        clearInterval(countDownfunction);
+        document.getElementById("demo").innerHTML = "AANGEKOMEN OP MARS";
+    }
+},1000);
+
+
+
+
+//De code hieronder heb ik gemaakt m.b.v. 'www.chartjs.com'.
+//Let op: ik heb de code niet klakkeloos overgenomen, maar ik heb het aangepast naar hoe ik het wilde.
+
 var ctx = document.getElementById('myChart1').getContext('2d');
 var chart = new Chart(ctx, {
     // The type of chart we want to create
     type: 'doughnut',
-    //line, bar
+    //vul in: line, bar, pie, doughnut, radar, polarArea, bubble
 
     // The data for our dataset
     data: {
@@ -18,47 +45,32 @@ var chart = new Chart(ctx, {
                 'rgb(146, 116, 242)',
                 'rgb(57, 0, 252)',
             ],
-            borderColor: 'rgb(36, 18, 91)',
+            borderColor: 'rgb(255, 255, 255)',
             data: [21, 12, 43, 7, 13, 2],
         }]
     },
 
     // Configuration options go here
-    options: {}
+    options: {
+        legend: {
+            position: 'bottom',
+        }
+    }
 });
+
+
+
+
 
 var ctx = document.getElementById('myChart2').getContext('2d');
 var chart = new Chart(ctx, {
     // The type of chart we want to create
-    type: 'line',
+    type: 'polarArea',
     //vul in: line, bar, pie, doughnut, radar, polarArea, bubble
 
     // The data for our dataset
     data: {
-        labels: ["January", "February", "March", "April", "May", "June", "July"],
-        datasets: [{
-            label: "My First dataset",
-            backgroundColor: 'rgba(146, 116, 242, 0.5)',
-                                
-            
-            borderColor: 'rgb(36, 18, 91)',
-            data: [0, 10, 35, 20, 66, 74, 100],
-        }]
-    },
-
-    // Configuration options go here
-    options: {}
-});
-
-var ctx = document.getElementById('myChart3').getContext('2d');
-var chart = new Chart(ctx, {
-    // The type of chart we want to create
-    type: 'bar',
-    //vul in: line, bar, pie, doughnut, radar, polarArea, bubble
-
-    // The data for our dataset
-    data: {
-        labels: ["January", "February", "March", "April", "May", "June"],
+        labels: ["Maandag", "Dinsdag", "Woensdag", "Donderdag", "Vrijdag", "Zaterdag", "Zondag"],
         datasets: [{
             label: "My First dataset",
             backgroundColor:  
@@ -69,12 +81,61 @@ var chart = new Chart(ctx, {
                 'rgb(78, 38, 214)',
                 'rgb(146, 116, 242)',
                 'rgb(57, 0, 252)',
+                'rgb(125, 0, 252)',
+
             ],
-            borderColor: 'rgb(36, 18, 91)',
-            data: [40, 50, 85, 100, 120, 130],
+            borderColor: 'rgb(252, 252, 252)',
+            data: [1, 3, 5, 2, 7, 6, 2],
         }]
     },
 
     // Configuration options go here
+    options: {
+        legend: {
+            position: 'bottom',
+        }
+    }
+});
+
+var ctx = document.getElementById('myChart3').getContext('2d');
+var chart = new Chart(ctx, {
+    // The type of chart we want to create
+    type: 'bar',
+    //vul in: line, bar, pie, doughnut, radar, polarArea, bubble
+
+    // The data for our dataset
+    data: {
+        labels: ["Brood", "Fruit", "Groenten", "Vlees", "Snacks", "Rijst"],
+        datasets: [
+        {
+            label: "Percentage",
+            backgroundColor: 'rgba(146, 116, 242, 0.5)',
+                                
+            
+            borderColor: 'rgb(252, 252, 252)',
+            data: [62, 60, 45, 96, 23, 74],
+        /*},
+        {
+            label: "Nu",
+            backgroundColor: 'rgba(36, 18, 91, 0.5)',
+                                
+            
+            borderColor: 'rgb(252, 252, 252)',
+            data: [30, 60, 35, 20, 66, 74, 100],*/
+        }]
+    },
+
+
+    // Configuration options go here
     options: {}
+    /*options: {
+        scales: {
+            xAxes: [{
+                stacked: true
+            }],
+            yAxes: [{
+                stacked: true
+            }]
+        }
+    }*/
 });
