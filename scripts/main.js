@@ -127,15 +127,14 @@ var chart = new Chart(ctx, {
 
 
     // Configuration options go here
-    options: {}
-    /*options: {
+
+    options: {
         scales: {
-            xAxes: [{
-                stacked: true
-            }],
             yAxes: [{
-                stacked: true
+                ticks: {
+                	beginAtZero: true
+                }
             }]
         }
-    }*/
+    }
 });
