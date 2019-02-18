@@ -26,6 +26,7 @@ var countDownfunction = setInterval(function() {
 //Let op: ik heb de code niet klakkeloos overgenomen, maar ik heb het aangepast naar hoe ik het wilde.
 
 var ctx = document.getElementById('myChart1').getContext('2d');
+var dataChart1 = [21, 12, 43, 7, 13, 2];
 var chart = new Chart(ctx, {
     // The type of chart we want to create
     type: 'doughnut',
@@ -46,7 +47,7 @@ var chart = new Chart(ctx, {
                 'rgb(57, 0, 252)',
             ],
             borderColor: 'rgb(255, 255, 255)',
-            data: [21, 12, 43, 7, 13, 2],
+            data: dataChart1,
         }]
     },
 
@@ -63,6 +64,7 @@ var chart = new Chart(ctx, {
 
 
 var ctx = document.getElementById('myChart2').getContext('2d');
+var dataChart2 = [1, 3, 5, 2, 7, 6, 2];
 var chart = new Chart(ctx, {
     // The type of chart we want to create
     type: 'polarArea',
@@ -85,7 +87,7 @@ var chart = new Chart(ctx, {
 
             ],
             borderColor: 'rgb(252, 252, 252)',
-            data: [1, 3, 5, 2, 7, 6, 2],
+            data: dataChart2,
         }]
     },
 
@@ -98,6 +100,7 @@ var chart = new Chart(ctx, {
 });
 
 var ctx = document.getElementById('myChart3').getContext('2d');
+var dataChart3 = [62, 60, 45, 96, 23, 74];
 var chart = new Chart(ctx, {
     // The type of chart we want to create
     type: 'bar',
@@ -113,7 +116,7 @@ var chart = new Chart(ctx, {
                                 
             
             borderColor: 'rgb(252, 252, 252)',
-            data: [62, 60, 45, 96, 23, 74],
+            data: dataChart3,
         /*},
         {
             label: "Nu",
@@ -140,6 +143,7 @@ var chart = new Chart(ctx, {
 });
 
 var ctx = document.getElementById('myChart4').getContext('2d');
+var dataChart4 = [0, 52000, 78000, 97000, 131000, 193000];
 var chart = new Chart(ctx, {
     // The type of chart we want to create
     type: 'line',
@@ -155,7 +159,7 @@ var chart = new Chart(ctx, {
                                 
             
             borderColor: 'rgb(36, 18, 91)',
-            data: [0, 52000, 78000, 97000, 131000, 193000],
+            data: dataChart4,
         /*},
         {
             label: "Nu",
@@ -182,6 +186,7 @@ var chart = new Chart(ctx, {
 });
 
 var ctx = document.getElementById('myChart5').getContext('2d');
+var dataChart5 = [55, 96, 81, 36, 8];
 var chart = new Chart(ctx, {
     // The type of chart we want to create
     type: 'radar',
@@ -197,7 +202,7 @@ var chart = new Chart(ctx, {
                                 
             
             borderColor: 'rgb(36, 18, 91)',
-            data: [55, 96, 81, 36, 8],
+            data: dataChart5,
         }]
     },
 
