@@ -150,7 +150,7 @@ var chart = new Chart(ctx, {
         labels: ["Januari", "Februari", "Maart", "April", "Mei", "Juni"],
         datasets: [
         {
-            label: "Huidige reis",
+            label: "Verbruikte liters",
             backgroundColor: 'rgba(146, 116, 242, 0.5)',
                                 
             
