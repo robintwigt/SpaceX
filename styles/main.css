@@ -171,7 +171,7 @@ p.klok {
     grid-template-areas: 
           ". title title title ."
           ". visualisatie1 visualisatie2 visualisatie3 ."
-          ". visualisatie4 visualisatie5 visualisatie6 ."
+          ". visualisatie4 visualisatie6 visualisatie5 ."
   }
 
 }

@@ -138,3 +138,73 @@ var chart = new Chart(ctx, {
         }
     }
 });
+
+var ctx = document.getElementById('myChart4').getContext('2d');
+var chart = new Chart(ctx, {
+    // The type of chart we want to create
+    type: 'line',
+    //vul in: line, bar, pie, doughnut, radar, polarArea, bubble
+
+    // The data for our dataset
+    data: {
+        labels: ["Januari", "Februari", "Maart", "April", "Mei", "Juni"],
+        datasets: [
+        {
+            label: "Huidige reis",
+            backgroundColor: 'rgba(146, 116, 242, 0.5)',
+                                
+            
+            borderColor: 'rgb(36, 18, 91)',
+            data: [0, 52000, 78000, 97000, 131000, 193000],
+        /*},
+        {
+            label: "Nu",
+            backgroundColor: 'rgba(36, 18, 91, 0.5)',
+                                
+            
+            borderColor: 'rgb(252, 252, 252)',
+            data: [30, 60, 35, 20, 66, 74, 100],*/
+        }]
+    },
+
+
+    // Configuration options go here
+
+    options: {
+        scales: {
+            yAxes: [{
+                ticks: {
+                	beginAtZero: true
+                }
+            }]
+        }
+    }
+});
+
+var ctx = document.getElementById('myChart5').getContext('2d');
+var chart = new Chart(ctx, {
+    // The type of chart we want to create
+    type: 'radar',
+    //vul in: line, bar, pie, doughnut, radar, polarArea, bubble
+
+    // The data for our dataset
+    data: {
+        labels: ["0-20", "21-40", "41-60", "61-80", "81-100"],
+        datasets: [
+        {
+            label: "Aantal mensen",
+            backgroundColor: 'rgba(146, 116, 242, 0.6)',
+                                
+            
+            borderColor: 'rgb(36, 18, 91)',
+            data: [55, 96, 81, 36, 8],
+        }]
+    },
+
+    // Configuration options go here
+    options: {
+        legend: {
+            position: 'bottom',
+        }
+    }
+});
