@@ -1,177 +1,84 @@
 body {
-  /*background-image: linear-gradient(-90deg, lightblue, blue, lightblue);*/
-  background-image: url(../img/sterrenhemel.jpg);
-  background-position: center, center;
-  background-repeat: no-repeat;
-  background-attachment: fixed;
-  background-size: cover;
-  color: black;
-  font-family: "Lato";
-  font-size: 16px;
+  color: #222;
+  background-color: #3653c4;
+  /*background-color: black;*/
+  overflow: hidden;
+  margin: 0px;
 }
 
-.header {
-  text-align: center;
-}
-
-.logo img {
-  width: 300px;
-  margin: 40px 0px 50px 0px;
+div.data {
+  position: absolute;
+  bottom: 5%;
+  margin-left: 25px;
 }
 
 h1 {
-  font-family: "Avenir Next";
-  font-size: 20px;
-  margin-bottom: 0px;
-  margin-left: 8px;
-  margin-right: 8px;
-}
-
-p {
-	margin-top: 0px;
-	margin-bottom: 25px;
-	margin-left: 8px;
-  margin-right: 8px;
-}
-
-p.klok {
-  margin-top: 0px;
-  margin-bottom: 0px;
-  margin-left: 8px;
-  margin-right: 8px;
-}
-
-.tijd {
+  color: #f2f2f2;
+  font-size: 50px;
   position: relative;
+  text-transform: uppercase;
+  font-family: 'Unica One', cursive;
+  padding: 0px;
+  margin: 0px;
 }
 
-#demo {
-  font-family: "Avenir Next";
-  font-weight: bold;
-  font-size: 30px;
-  /*word-spacing: 1000px;*/
-  text-align: center;
-  /*color: rgb(146, 116, 242);*/
-  border: 3px solid rgb(221, 204, 252);
-  width: 210px;
-  margin: auto;
+hr {
+  background-color: white;
+  color: white;
+  border: none;
+  height: 3px;
 }
 
-
-
-.header, .visualisatie1, .visualisatie2, .visualisatie3, .visualisatie4, .visualisatie5, .visualisatie6 {
-  /*padding: 0.2em 1em;
-  padding-bottom: 0px;*/
+.zon {
+  position: absolute;
+  top: -15%;
+  width: 100%;
+  height: 500px;
+  background: url('../img/zon.png') repeat;
+  opacity: 0;
 }
 
-.header {
-    background-color: none;
-    grid-area: title;
+.wolken1 {
+  position: absolute;
+  top: -5%;
+  width: 100%;
+  height: 341px;
+  background: url('../img/wolken.png') repeat;
+  opacity: 0;
 }
 
-.visualisatie1 {
-    background-color: rgb(255, 255, 255);
-    grid-area: visualisatie1;
-    padding: 0px 10px 20px 10px;
-    margin: 5px 5px 5px 5px;
+.wolken2 { 
+  position: absolute;
+  top: 15%;
+  width: 100%;
+  height: 341px;
+  background: url('../img/wolken.png') repeat;
+  opacity: 0;
 }
 
-.visualisatie2 {
-    background-color: rgb(255, 255, 255);
-    grid-area: visualisatie2;
-    padding: 0px 10px 30px 10px;
-    margin: 5px 5px 5px 5px;
+.maan {
+  position: absolute;
+  top: -15%;
+  width: 100%;
+  height: 500px;
+  background: url('../img/maan.png') repeat;
+  opacity: 0;
 }
 
-.visualisatie3 {
-    background-color: rgb(255, 255, 255);
-    grid-area: visualisatie3;
-    padding: 0px 10px 20px 10px;
-    margin: 5px 5px 5px 5px;
+.sterren1 {
+  position: absolute;
+  top: -5%;
+  width: 100%;
+  height: 341px;
+  background: url('../img/sterren.png') repeat;
+  opacity: 0;
 }
 
-.visualisatie4 {
-    background-color: rgb(255, 255, 255);
-    grid-area: visualisatie4;
-    padding: 0px 10px 20px 10px;
-    margin: 5px 5px 5px 5px;
-}
-
-.visualisatie5 {
-    background-color: rgb(255, 255, 255);
-    grid-area: visualisatie5;
-    padding: 0px 10px 20px 10px;
-    margin: 5px 5px 5px 5px;
-}
-
-.visualisatie6 {
-    background-color: rgb(255, 255, 255);
-    grid-area: visualisatie6;
-    padding: 0px 10px 20px 10px;
-    margin: 5px 5px 5px 5px;
-}
-
-/*
-#myChart2 {
-	min-width: 200px;
-}
-*/
-
-
-@media only screen and (min-width: 0px) and (max-width: 499px){
-  body{
-    display: grid;
-    grid-template-columns: 100%;
-
-    grid-template-areas: 
-          "title"
-          "visualisatie2" 
-          "visualisatie1"
-          "visualisatie3"
-          "visualisatie4"
-          "visualisatie5"
-          "visualisatie6"
-  }
-}
-
-@media only screen and (min-width: 500px) and (max-width: 834px){
-  body{
-    display: grid;
-    grid-template-columns: 20% 60% 20%;
-
-    grid-template-areas: 
-          ". title ."
-          ". visualisatie2 ." 
-          ". visualisatie1 ."
-          ". visualisatie3 ."
-          ". visualisatie4 ."
-          ". visualisatie5 ."
-          ". visualisatie6 ."
-  }
-}
-
-@media only screen and (min-width: 835px) and (max-width: 1199px){
-  body{
-    display: grid;
-    grid-template-columns: 17% 33% 33% 17%;
-
-    grid-template-areas: 
-          ". title title ."
-          ". visualisatie2 visualisatie1 ."
-          ". visualisatie3 visualisatie4 ."
-          ". visualisatie5 visualisatie6 ."
-  }
-}
-
-@media only screen and (min-width: 1200px){
-  body{
-    display: grid;
-    grid-template-columns: 14% 24% 24% 24% 14%;
-
-    grid-template-areas: 
-          ". title title title ."
-          ". visualisatie1 visualisatie2 visualisatie3 ."
-          ". visualisatie4 visualisatie6 visualisatie5 ."
-  }
-
+.sterren2 { 
+  position: absolute;
+  top: 15%;
+  width: 100%;
+  height: 341px;
+  background: url('../img/sterren.png') repeat;
+  opacity: 0;
 }
