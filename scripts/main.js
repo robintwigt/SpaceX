@@ -1,159 +1,215 @@
+//De code hieronder heb ik gemaakt m.b.v. een tutorial op youtube.
+//Let op: ik heb de code niet klakkeloos overgenomen, maar ik heb het aangepast naar hoe ik het wilde.
 
-setInterval(updateTijd, 500);
-
-function updateTijd(){
-	var today = new Date();
-
-	var maanden = ['januari', 'februari', 'maart', 'april', 'mei', 'juni', 'juli', 'augustus', 'september', 'oktober', 'november', 'december'];
-	var formatDate = today.getDate() + ' ' + maanden[today.getMonth()] + ' ' + today.getFullYear();
-	document.getElementById('datum').innerHTML = formatDate;
-
-	function leadingZero(number) {
-	    if(number < 10) {
-	      return '0'+number;
-	    }
-	    else {
-	      return number;
-	    }
-	}
-
-	var uren = leadingZero(today.getHours());
-	var minuten = leadingZero(today.getMinutes());
-	var seconden = leadingZero(today.getSeconds());
-
-	var formatTime = uren + ':' + minuten + ':' + seconden;
-	document.getElementById('tijd').innerHTML = formatTime;
-}
-
-
-
-
-// set timeline
-var timeline = new TimelineMax({ repeat: -1, ease: Power0.easeNone });
-
-// amimate timeline
-timeline.to('.overdag', 1, { opacity: 1})
-    .from('.zon', 800, { backgroundPositionX: -2000}, 'overdag')
-    .from('.wolken1', 1000, { backgroundPositionX: 2400}, 'overdag')
-    .from('.wolken2', 1500, { backgroundPositionX: 1200}, 'overdag');
-
-/*
-// set timeline
-var timeline2 = new TimelineMax({ repeat: -1, ease: Power0.easeNone });
-
-// amimate timeline
-timeline2.to('.nacht', 1, { opacity: 1})
-    .from('.maan', 800, { backgroundPositionX: -2000}, 'nacht')
-    .from('.sterren1', 1000, { backgroundPositionX: 2400}, 'nacht')
-    .from('.sterren2', 1500, { backgroundPositionX: 1200}, 'nacht');
-*/
-
-TweenMax.from(".body", 1, {backgroundColor:"white"})
-/*
-TweenMax.from(".data", 0.5, {opacity:0, scale:0, ease:Bounce.easeOut});
-*/
-TweenMax.from(".data", 2, {left:-500, rotation:-20});
-
-
-
-
-
-
-
-
-
-/*------------------------------------------------------------------------------*/
-
-
-
-
-//!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-
-var verandering1 = verandering1(today.getMinutes());
-
-function verandering1(number) {
-    if(number < 30) {
-      document.getElementByClass('nacht').style.display='none';
+var countDownDate = new Date("Apr 3, 2019 00:00:00").getTime();
+var countDownfunction = setInterval(function() {
+    var now = new Date().getTime();
+    var distance = countDownDate - now;
+    var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+    var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+    var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+    var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+    document.getElementById("dagen").innerHTML = days + " dagen";
+    document.getElementById("uren").innerHTML = hours + " uren";
+    document.getElementById("minuten").innerHTML = minutes + " minuten";
+    document.getElementById("seconden").innerHTML = seconds + " seconden";
+    if(distance < 0) {
+        clearInterval(countDownfunction);
+        document.getElementById("demo").innerHTML = "AANGEKOMEN OP MARS";
     }
-    else {
-      document.getElementByClass('nacht').style.display='block';
+},1000);
+
+
+
+
+//De code hieronder heb ik gemaakt m.b.v. 'www.chartjs.com'.
+//Let op: ik heb de code niet klakkeloos overgenomen, maar ik heb het aangepast naar hoe ik het wilde.
+
+var ctx = document.getElementById('myChart1').getContext('2d');
+var dataChart1 = [21, 12, 43, 7, 13, 2];
+var chart = new Chart(ctx, {
+    // The type of chart we want to create
+    type: 'doughnut',
+    //vul in: line, bar, pie, doughnut, radar, polarArea, bubble
+
+    // The data for our dataset
+    data: {
+        labels: ["Stikstof", "Argon", "Koolstofdioxide", "Zuurstof", "Koolstofmonoxide", "Neon"],
+        datasets: [{
+            label: "My First dataset",
+            backgroundColor:  
+            [  
+                'rgb(36, 18, 91)',
+                'rgb(221, 204, 252)', 
+                'rgb(69, 40, 160)',
+                'rgb(78, 38, 214)',
+                'rgb(146, 116, 242)',
+                'rgb(57, 0, 252)',
+            ],
+            borderColor: 'rgb(255, 255, 255)',
+            data: dataChart1,
+        }]
+    },
+
+    // Configuration options go here
+    options: {
+        legend: {
+            position: 'bottom',
+        }
     }
-}
-
-
-//!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-
-
-
-
-
-
-/*document.write(Date());*/
-
-/*var secondHand = document.getElementByClass('second-hand');
-
-var tl1 = new TimelineMax();
-tl1.to(secondHand, 4, {
-    rotation: 180
 });
 
-*/
 
 
 
 
-/*
+var ctx = document.getElementById('myChart2').getContext('2d');
+var dataChart2 = [1, 3, 5, 2, 7, 6, 2];
+var chart = new Chart(ctx, {
+    // The type of chart we want to create
+    type: 'polarArea',
+    //vul in: line, bar, pie, doughnut, radar, polarArea, bubble
 
-class State {
-    constructor(seconds, minutes, hours) {
-        this.seconds = seconds;
-        this.minutes = minutes;
-        this.hours = hours;
+    // The data for our dataset
+    data: {
+        labels: ["Maandag", "Dinsdag", "Woensdag", "Donderdag", "Vrijdag", "Zaterdag", "Zondag"],
+        datasets: [{
+            label: "My First dataset",
+            backgroundColor:  
+            [  
+                'rgb(36, 18, 91)',
+                'rgb(221, 204, 252)', 
+                'rgb(69, 40, 160)',
+                'rgb(78, 38, 214)',
+                'rgb(146, 116, 242)',
+                'rgb(57, 0, 252)',
+                'rgb(125, 0, 252)',
+
+            ],
+            borderColor: 'rgb(252, 252, 252)',
+            data: dataChart2,
+        }]
+    },
+
+    // Configuration options go here
+    options: {
+        legend: {
+            position: 'bottom',
+        }
     }
+});
 
-    static now() {
-        const now = new Date();
-        const seconds = now.getSeconds() + now.getMilliseconds() / 1000;
-        const minutes = now.getMinutes() + seconds / 60;
-        const hours = now.getHours() + minutes / 60;
-        return new State(seconds, minutes, hours);
+var ctx = document.getElementById('myChart3').getContext('2d');
+var dataChart3 = [62, 60, 45, 96, 23, 74];
+var chart = new Chart(ctx, {
+    // The type of chart we want to create
+    type: 'bar',
+    //vul in: line, bar, pie, doughnut, radar, polarArea, bubble
+
+    // The data for our dataset
+    data: {
+        labels: ["Brood", "Fruit", "Groenten", "Vlees", "Snacks", "Rijst"],
+        datasets: [
+        {
+            label: "Percentage",
+            backgroundColor: 'rgba(146, 116, 242, 0.5)',
+                                
+            
+            borderColor: 'rgb(252, 252, 252)',
+            data: dataChart3,
+        /*},
+        {
+            label: "Nu",
+            backgroundColor: 'rgba(36, 18, 91, 0.5)',
+                                
+            
+            borderColor: 'rgb(252, 252, 252)',
+            data: [30, 60, 35, 20, 66, 74, 100],*/
+        }]
+    },
+
+
+    // Configuration options go here
+
+    options: {
+        scales: {
+            yAxes: [{
+                ticks: {
+                	beginAtZero: true
+                }
+            }]
+        }
     }
-}
+});
 
-class Clock {
-    constructor(state) {
-        this.state = state;
-        this.tick = this.tick.bind(this);
-        requestAnimationFrame(this.tick);
+var ctx = document.getElementById('myChart4').getContext('2d');
+var dataChart4 = [0, 52000, 78000, 97000, 131000, 193000];
+var chart = new Chart(ctx, {
+    // The type of chart we want to create
+    type: 'line',
+    //vul in: line, bar, pie, doughnut, radar, polarArea, bubble
+
+    // The data for our dataset
+    data: {
+        labels: ["Januari", "Februari", "Maart", "April", "Mei", "Juni"],
+        datasets: [
+        {
+            label: "Verbruikte liters",
+            backgroundColor: 'rgba(146, 116, 242, 0.5)',
+                                
+            
+            borderColor: 'rgb(36, 18, 91)',
+            data: dataChart4,
+        /*},
+        {
+            label: "Nu",
+            backgroundColor: 'rgba(36, 18, 91, 0.5)',
+                                
+            
+            borderColor: 'rgb(252, 252, 252)',
+            data: [30, 60, 35, 20, 66, 74, 100],*/
+        }]
+    },
+
+
+    // Configuration options go here
+
+    options: {
+        scales: {
+            yAxes: [{
+                ticks: {
+                	beginAtZero: true
+                }
+            }]
+        }
     }
+});
 
-    tick() {
-        this.setState(State.now());
-        requestAnimationFrame(this.tick);
+var ctx = document.getElementById('myChart5').getContext('2d');
+var dataChart5 = [55, 96, 81, 36, 8];
+var chart = new Chart(ctx, {
+    // The type of chart we want to create
+    type: 'radar',
+    //vul in: line, bar, pie, doughnut, radar, polarArea, bubble
+
+    // The data for our dataset
+    data: {
+        labels: ["0-20", "21-40", "41-60", "61-80", "81-100"],
+        datasets: [
+        {
+            label: "Aantal mensen",
+            backgroundColor: 'rgba(146, 116, 242, 0.6)',
+                                
+            
+            borderColor: 'rgb(36, 18, 91)',
+            data: dataChart5,
+        }]
+    },
+
+    // Configuration options go here
+    options: {
+        legend: {
+            position: 'bottom',
+        }
     }
-
-    setState(newState) {
-        this.state = { ...this.state, ...newState};
-        this.render();
-    }
-
-    render() {
-        const { seconds, minutes, hours } = this.state;
-
-        //voor second hand
-        document.querySelector(".second-hand").style.transform
-        = rotate(${Math.floor(seconds) / 60 * 360}deg) ;
-
-        //voor minute hand
-        document.querySelector(".minute-hand").style.transform
-        = rotate(${minutes / 60 * 360}deg) ;
-
-        //voor hour hand
-        document.querySelector(".hour-hand").style.transform
-        = rotate(${hours / 12 * 360}deg) ;
-    }
-}
-
-const CLOCK = new Clock();
-
-*/
+});
