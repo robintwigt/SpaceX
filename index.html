@@ -2,58 +2,30 @@
 <html lang="nl">
 	<head>
 		<meta charset="UTF-8" />
-		<title>SpaceX</title>
+		<title>Klok</title>
 		<meta name="viewport" content="width=device-width, initial-scale=1">
-		<link href="https://fonts.googleapis.com/css?family=Asap+Condensed" rel="stylesheet" />
 		<link type="text/css" href="styles/main.css" rel="stylesheet" />
-		<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.4.0/Chart.min.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.1.2/TweenMax.min.js"></script>
+    <style>@import url('https://fonts.googleapis.com/css?family=Unica+One');</style>
 	</head>
-	<body>
-		<header class="grid-item header">
-	  		<a href="index.html" class="logo"><img src="img/spacexlogo.png" alt="Logo SpaceX" /></a>
-	  	</header>
+	<body class="body">
 
-	  	<div class="grid-item visualisatie1">
-	  		<h1>Luchtsamenstelling</h1>
-	  		<p>De samenstelling van de lucht op mars.</p>
-	  		<canvas id="myChart1"></canvas>
-	  	</div>
+    <div class="overdag zon"></div>
+    <div class="overdag wolken1"></div>
+    <div class="overdag wolken2"></div>
 
-	  	<div class="grid-item visualisatie2 tijd">
-	  		<h1>Aankomst op mars</h1>
-	  		<p>Over hoelang de raket aankomt op mars.</p>
-	  		<div id="demo">
-	  			<p class="klok" id="dagen"></p>
-	  			<p class="klok" id="uren"></p>
-	  			<p class="klok" id="minuten"></p>
-	  			<p class="klok" id="seconden"></p>
-	  		</div>
-	  	</div>
+    <div class="nacht maan"></div>
+    <div class="nacht sterren1"></div>
+    <div class="nacht sterren2"></div>
 
-	  	<div class="grid-item visualisatie3">
-	  		<h1>Bijeenkomsten</h1>
-	  		<p>Het aantal bijeenkomsten per dag.</p>
-	  		<canvas id="myChart2"></canvas>
-	  	</div>
+    <div class="data">
+      <h1 id="datum"></h1>
+      <hr />
+      <h1 id="tijd"></h1>
+    </div>
 
-	  	<div class="grid-item visualisatie4">
-	  		<h1>Voedselvoorraad</h1>
-	  		<p>Het percentage voedsel dat nog over is.</p>
-	  		<canvas id="myChart3"></canvas>
-	  	</div>
+    <script type="text/javascript" src="scripts/TweenMax.min.js"></script>
+    <script type="text/javascript" src="scripts/main.js"></script>
 
-	  	<div class="grid-item visualisatie5">
-	  		<h1>Verbruikte brandstof</h1>
-	  		<p>Het aantal liters dat verbruikt is.</p>
-	  		<canvas id="myChart4"></canvas>
-	  	</div>
-
-	  	<div class="grid-item visualisatie6">
-	  		<h1>Leeftijdscategorieën</h1>
-	  		<p>Het aantal mensen dat aan boord is met een bepaalde leeftijd.</p>
-	  		<canvas id="myChart5"></canvas>
-	  	</div>
-
-	  <script type="text/javascript" src="scripts/main.js"></script>
 	</body>
 </html>
