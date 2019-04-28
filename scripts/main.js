@@ -1,7 +1,7 @@
 //De code hieronder heb ik gemaakt m.b.v. een tutorial op youtube.
 //Let op: ik heb de code niet klakkeloos overgenomen, maar ik heb het aangepast naar hoe ik het wilde.
 
-var countDownDate = new Date("Apr 3, 2019 00:00:00").getTime();
+var countDownDate = new Date("Apr 3, 2020 00:00:00").getTime();
 var countDownfunction = setInterval(function() {
     var now = new Date().getTime();
     var distance = countDownDate - now;
